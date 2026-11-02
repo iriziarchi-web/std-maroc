@@ -1,0 +1,100 @@
+{
+  "_note": "Valeurs indicatives pour le prototype. Chaque valeur devra être remplacée par une valeur sourcée (mesures locales, LPEE, universités, normes). lambda en W/(m.K), rho en kg/m3, cp en J/(kg.K).",
+  "materiaux": {
+    "pise": {
+      "nom": "Pisé (terre damée)",
+      "lambda": 0.9, "rho": 1900, "cp": 1000,
+      "absorption_solaire": 0.65, "rugosite": "Rough",
+      "fourchette_lambda": [0.6, 1.1],
+      "source": "À sourcer. Ordre de grandeur courant pour la terre damée à 1800-2000 kg/m3."
+    },
+    "adobe": {
+      "nom": "Adobe (brique de terre crue)",
+      "lambda": 0.7, "rho": 1600, "cp": 1000,
+      "absorption_solaire": 0.65, "rugosite": "Rough",
+      "fourchette_lambda": [0.45, 0.9],
+      "source": "À sourcer."
+    },
+    "btc": {
+      "nom": "BTC (bloc de terre comprimée)",
+      "lambda": 1.0, "rho": 1900, "cp": 1000,
+      "absorption_solaire": 0.65, "rugosite": "MediumRough",
+      "fourchette_lambda": [0.7, 1.2],
+      "source": "À sourcer."
+    },
+    "pierre": {
+      "nom": "Pierre (moellons hourdés)",
+      "lambda": 1.7, "rho": 2200, "cp": 900,
+      "absorption_solaire": 0.6, "rugosite": "Rough",
+      "fourchette_lambda": [1.0, 2.5],
+      "source": "À sourcer. Dépend fortement de la roche et du mortier."
+    },
+    "parpaing": {
+      "nom": "Parpaing creux béton 20 cm (équivalent homogène)",
+      "lambda": 0.87, "rho": 1000, "cp": 1000,
+      "absorption_solaire": 0.6, "rugosite": "MediumRough",
+      "fourchette_lambda": [0.8, 1.1],
+      "source": "Équivalent homogène pour R d'environ 0,23 m2.K/W sur 20 cm. À vérifier."
+    },
+    "enduit_chaux": {
+      "nom": "Enduit à la chaux",
+      "lambda": 0.8, "rho": 1600, "cp": 1000,
+      "absorption_solaire": 0.4, "rugosite": "MediumRough",
+      "source": "À sourcer."
+    },
+    "enduit_terre": {
+      "nom": "Enduit terre",
+      "lambda": 0.8, "rho": 1700, "cp": 1000,
+      "absorption_solaire": 0.65, "rugosite": "MediumRough",
+      "source": "À sourcer."
+    },
+    "tadelakt": {
+      "nom": "Tadelakt",
+      "lambda": 0.9, "rho": 1700, "cp": 1000,
+      "absorption_solaire": 0.5, "rugosite": "Smooth",
+      "source": "À sourcer."
+    },
+    "enduit_ciment": {
+      "nom": "Enduit ciment",
+      "lambda": 1.15, "rho": 1900, "cp": 1000,
+      "absorption_solaire": 0.6, "rugosite": "MediumRough",
+      "source": "Valeur usuelle des règles Th-U. À vérifier."
+    },
+    "platre": {
+      "nom": "Enduit plâtre",
+      "lambda": 0.4, "rho": 1100, "cp": 1000,
+      "absorption_solaire": 0.4, "rugosite": "Smooth",
+      "source": "Valeur usuelle. À vérifier."
+    },
+    "beton": {
+      "nom": "Béton plein",
+      "lambda": 1.75, "rho": 2300, "cp": 1000,
+      "absorption_solaire": 0.7, "rugosite": "MediumRough",
+      "source": "Valeur usuelle des règles Th-U."
+    },
+    "chape": {
+      "nom": "Chape mortier",
+      "lambda": 1.15, "rho": 2000, "cp": 1000,
+      "absorption_solaire": 0.6, "rugosite": "MediumRough",
+      "source": "Valeur usuelle."
+    },
+    "terre_toiture": {
+      "nom": "Terre de couverture (toiture traditionnelle)",
+      "lambda": 0.8, "rho": 1600, "cp": 1000,
+      "absorption_solaire": 0.65, "rugosite": "Rough",
+      "source": "À sourcer."
+    },
+    "bois": {
+      "nom": "Bois (solives, planches)",
+      "lambda": 0.13, "rho": 500, "cp": 1600,
+      "absorption_solaire": 0.6, "rugosite": "MediumSmooth",
+      "source": "Valeur usuelle résineux."
+    },
+    "roseau": {
+      "nom": "Lit de roseaux",
+      "lambda": 0.07, "rho": 200, "cp": 1300,
+      "absorption_solaire": 0.6, "rugosite": "Rough",
+      "source": "À sourcer."
+    }
+  }
+}

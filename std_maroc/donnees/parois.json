@@ -1,0 +1,41 @@
+{
+  "_note": "Couches de l'extérieur vers l'intérieur. Épaisseurs en mètres.",
+  "murs": {
+    "pise_50": {
+      "nom": "Pisé 50 cm, enduits terre",
+      "couches": [["enduit_terre", 0.02], ["pise", 0.50], ["enduit_terre", 0.02]]
+    },
+    "adobe_40": {
+      "nom": "Adobe 40 cm, enduits terre",
+      "couches": [["enduit_terre", 0.02], ["adobe", 0.40], ["enduit_terre", 0.02]]
+    },
+    "pierre_50": {
+      "nom": "Pierre 50 cm, enduits chaux",
+      "couches": [["enduit_chaux", 0.02], ["pierre", 0.50], ["enduit_chaux", 0.02]]
+    },
+    "btc_30": {
+      "nom": "BTC 30 cm, enduits chaux",
+      "couches": [["enduit_chaux", 0.02], ["btc", 0.30], ["enduit_chaux", 0.02]]
+    },
+    "parpaing_20": {
+      "nom": "Parpaing 20 cm, enduit ciment et plâtre (référence)",
+      "couches": [["enduit_ciment", 0.02], ["parpaing", 0.20], ["platre", 0.015]]
+    }
+  },
+  "toitures": {
+    "dalle_beton": {
+      "nom": "Dalle béton 16 cm avec chape, plâtre en sous-face",
+      "couches": [["chape", 0.04], ["beton", 0.16], ["platre", 0.015]]
+    },
+    "terre_bois_roseau": {
+      "nom": "Toiture traditionnelle terre sur roseaux et solives bois",
+      "couches": [["terre_toiture", 0.20], ["roseau", 0.05], ["bois", 0.03]]
+    }
+  },
+  "planchers": {
+    "dallage": {
+      "nom": "Dallage béton 10 cm sur terre-plein avec chape",
+      "couches": [["beton", 0.10], ["chape", 0.05]]
+    }
+  }
+}
