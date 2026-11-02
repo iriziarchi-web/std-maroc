@@ -30,6 +30,26 @@ jobs:
         run: python -m std_maroc meteo agadir errachidia
       - name: Simulations
         run: python -m std_maroc prototype
+      - name: Résumé des résultats
+        if: always()
+        run: |
+          {
+            echo "## Synthèse des simulations"
+            echo
+            if [ -f resultats/synthese.csv ]; then
+              python -c "import csv; r=list(csv.reader(open('resultats/synthese.csv'),delimiter=';')); print('| '+' | '.join(r[0])+' |'); print('|'+' --- |'*len(r[0])); [print('| '+' | '.join(l)+' |') for l in r[1:]]"
+            fi
+            echo
+            echo "## Messages EnergyPlus"
+            echo
+            for f in resultats/*/eplusout.err; do
+              echo "- $(basename $(dirname $f)) : $(grep -c '\*\* Severe' $f) erreurs graves, $(grep -c '\*\* Warning' $f) avertissements"
+            done
+            echo
+            echo '```'
+            grep -h -A1 '\*\* Warning\|\*\* Severe' resultats/*/eplusout.err | sort | uniq -c | sort -rn | head -30
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
