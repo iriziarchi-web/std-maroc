@@ -1,0 +1,11 @@
+{
+  "_note": "Zones climatiques du Règlement Thermique de Construction au Maroc (RTCM) et leur ville de référence. Coordonnées approchées. Le fichier météo EPW de chaque ville est à placer dans meteo/ sous le nom indiqué.",
+  "zones": {
+    "Z1": {"ville": "Agadir", "cle": "agadir", "latitude": 30.38, "longitude": -9.57, "altitude": 23, "fichier_epw": "agadir.epw", "recherche_onebuilding": "Agadir"},
+    "Z2": {"ville": "Tanger", "cle": "tanger", "latitude": 35.73, "longitude": -5.92, "altitude": 15, "fichier_epw": "tanger.epw", "recherche_onebuilding": "Tanger"},
+    "Z3": {"ville": "Fès", "cle": "fes", "latitude": 33.93, "longitude": -4.98, "altitude": 579, "fichier_epw": "fes.epw", "recherche_onebuilding": "Fes"},
+    "Z4": {"ville": "Ifrane", "cle": "ifrane", "latitude": 33.50, "longitude": -5.17, "altitude": 1664, "fichier_epw": "ifrane.epw", "recherche_onebuilding": "Ifrane"},
+    "Z5": {"ville": "Marrakech", "cle": "marrakech", "latitude": 31.61, "longitude": -8.04, "altitude": 466, "fichier_epw": "marrakech.epw", "recherche_onebuilding": "Marrakech"},
+    "Z6": {"ville": "Errachidia", "cle": "errachidia", "latitude": 31.93, "longitude": -4.40, "altitude": 1037, "fichier_epw": "errachidia.epw", "recherche_onebuilding": "Rachidia"}
+  }
+}

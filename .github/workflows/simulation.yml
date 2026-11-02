@@ -1,0 +1,41 @@
+name: Simulation prototype 1
+
+# Lancement manuel : onglet Actions > « Simulation prototype 1 » > Run workflow.
+on:
+  workflow_dispatch:
+
+env:
+  EPLUS_URL: https://github.com/NREL/EnergyPlus/releases/download/v24.2.0a/EnergyPlus-24.2.0-94a887817b-Linux-Ubuntu22.04-x86_64.tar.gz
+
+jobs:
+  simulation:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt jsonschema
+      - name: Installer EnergyPlus 24.2
+        run: |
+          curl -sSL "$EPLUS_URL" -o /tmp/eplus.tar.gz
+          mkdir -p /opt/energyplus
+          tar xzf /tmp/eplus.tar.gz -C /opt/energyplus --strip-components=1
+          echo "/opt/energyplus" >> "$GITHUB_PATH"
+          echo "ENERGYPLUS_SCHEMA=/opt/energyplus/Energy+.schema.epJSON" >> "$GITHUB_ENV"
+      - run: energyplus --version
+      - name: Tests (avec validation du schéma EnergyPlus)
+        run: python -m unittest -v
+      - name: Fichiers météo
+        run: python -m std_maroc meteo agadir errachidia
+      - name: Simulations
+        run: python -m std_maroc prototype
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resultats-prototype-1
+          path: |
+            resultats/rapport_prototype_1.pdf
+            resultats/synthese.csv
+            resultats/synthese.json
+            resultats/*/eplusout.err
